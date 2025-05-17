@@ -4,5 +4,15 @@ decryption.v
 /home/runner/decryption.v
 dynamickey.v
 /home/runner/dynamickey.v
-key_reduction.v
-/home/runner/key_reduction.v
+ravanpipeline.v
+/home/runner/ravanpipeline.v
+sha.v
+/home/runner/sha.v
+sha_constrants.v
+/home/runner/sha_constrants.v
+sha_mem.v
+/home/runner/sha_mem.v
+sha_core.v
+/home/runner/sha_core.v
+custom32.v
+/home/runner/custom32.v

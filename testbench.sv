@@ -2,7 +2,15 @@
 `include "encryption.v"
 `include "decryption.v"
 `include "dynamickey.v"
-`include "key_reduction.v"
+`include "ravanpipeline.v"
+`include "sha.v"
+`include "sha_constrants.v"
+`include "sha_mem.v"
+`include "sha_core.v"
+`include "custom32.v"
+
+
+
   // Make sure this has the fixed real_data logic!
 
 module RAVAN_TB;
@@ -11,7 +19,7 @@ module RAVAN_TB;
   logic clk;
   logic rst;
   logic enc_op_sel;  // 1 = encryption, 0 = decryption
-
+  logic sha_error;
   // Inputs and outputs
   logic [63:0] data_in;
   logic [511:0] key;
@@ -27,7 +35,8 @@ module RAVAN_TB;
     .enc_op_sel(enc_op_sel),
     .data_in(data_in),
     .key(key),
-    .data_out(data_out)
+    .data_out(data_out),
+    .sha_error(sha_error)
   );
  
   // Clock generation: 100 MHz

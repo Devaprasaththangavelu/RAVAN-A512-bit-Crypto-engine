@@ -1,5 +1,5 @@
 xrun: 23.09-s001: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s001: Started on Apr 14, 2025 at 11:14:33 EDT
+TOOL:	xrun	23.09-s001: Started on May 17, 2025 at 05:08:00 EDT
 xrun
 	-Q
 	-unbuffered
@@ -9,19 +9,18 @@ xrun
 	design.sv
 	testbench.sv
 	Top level design units:
-		key_reduction
 		RAVAN_TB
-Loading snapshot worklib.key_reduction:v .................... Done
+Loading snapshot worklib.RAVAN_TB:sv .................... Done
 xcelium> source /xcelium23.09/tools/xcelium/files/xmsimrc
 xcelium> run
 ===== RAVAN Encryption/Decryption Testbench =====
 Real data:12345678abcdef01
 [INFO] Starting Encryption...
-Encrypted Output: 184a525b97047796
+Encrypted Output: 12345678abcdef01
 [INFO] Starting Decryption...
 Decrypted Output: 12345678abcdef01
 ✅ Decryption successful!
 Simulation complete via $finish(1) at time 210 NS + 0
-./testbench.sv:74     $finish;
+./testbench.sv:83     $finish;
 xcelium> exit
-TOOL:	xrun	23.09-s001: Exiting on Apr 14, 2025 at 11:14:35 EDT  (total: 00:00:02)
+TOOL:	xrun	23.09-s001: Exiting on May 17, 2025 at 05:08:01 EDT  (total: 00:00:01)
