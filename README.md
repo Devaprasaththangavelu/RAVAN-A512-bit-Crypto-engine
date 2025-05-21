@@ -35,9 +35,10 @@ Then save the file and just click run option to simulate the code,
 If you are using candance or synopsys you just need to create a new project and import all the files and then simulate it.
 
 FEATURES:
-SHA 256
-Custom encryption / decryption
-AXI bus(needs to be implemented)
+>SHA 256
+>Custom encryption / decryption
+>512 kb onchip RAM
+>AXI bus(needs to be implemented)
 
 ARCHITECHTURE:
 
