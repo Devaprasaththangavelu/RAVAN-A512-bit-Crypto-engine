@@ -1,10 +1,9 @@
-//Test class is a uvm component
 class rce_test extends uvm_test;//uvm_test is the base test class
   `uvm_component_utils(rce_test) // reg class to uvm factory
   
   rce_env env;
   rce_sequence seq;
-  //dff_data_sequence data_seq;
+
   
   //standard constructor
   function new(string name ="rce_test", uvm_component parent);
@@ -19,7 +18,7 @@ class rce_test extends uvm_test;//uvm_test is the base test class
     // create lower components
     env = rce_env::type_id::create("env", this);
     seq = rce_sequence::type_id::create("seq", this);
-    //data_seq = dff_data_sequence::type_id::create("data_seq", this);
+    data_seq = rce_data_sequence::type_id::create("data_seq", this);
 
   endfunction
   

@@ -28,11 +28,21 @@ class rce_monitor extends uvm_monitor;//uvm_monitor is the base monitor class
     //sampling the output
     @(posedge intf.clk)
     tx.rst = intf.rst;
-    tx.enc_op_sel=intf.enc_op_sel;
-    tx.data_in=intf.data_in;
+    tx.data=intf.data;
+    tx.address=intf.address;
     tx.key=intf.key;
     tx.data_out=intf.data_out;
-    tx.sha_error=intf.sha_error;
-    
+    tx.sha_error_out=intf.sha_error_out;
+    tx.awvalid =intf.awvalid;
+    tx.wvalid =intf.wvalid;
+    tx.bready =intf.bready;
+    tx.arvalid =intf.arvalid;
+    tx.rready=intf.rready;
+    tx.awready=intf.awready; 
+    tx.wready =intf.wready;
+    tx.bvalid =intf.bvalid;
+    tx.arready  =intf.arready;
+    tx.rvalid=intf.rvalid;
+  
   endtask
 endclass

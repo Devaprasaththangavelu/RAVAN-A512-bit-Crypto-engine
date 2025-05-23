@@ -6,8 +6,11 @@ module RAVAN_TOP(
   output sha_error
 );
   wire [63:0] enc_data_out;
+  reg [63:0] dec_data_in;  
   wire [63:0] dec_data_out;
   reg  [511:0] hashkey;
+  reg [15:0] add;
+  reg rd_wr;
   
   pipeline pipeline_unit( // pipe line for the hashing 
     .clk(clk),
@@ -30,19 +33,33 @@ module RAVAN_TOP(
     .clk(clk),
     .rst(rst),
     .real_data(data_in),
-    .data_in(enc_data_out),
+    .data_in(dec_data_in),
     .key(hashkey),
     .dec_data_out(dec_data_out)
   );
   
+  memory memory_core(
+    .clk(clk),
+    .rst(rst),
+    .rd_wr(rd_wr),
+    .data(enc_data_out),
+    .address(add),
+    .out_data(dec_data_in)
+  );
 
+  key_reduction ravan_key_reduction_core(
+    .clk(clk),
+    .key(hashkey),
+    .red_key(add)
+  );
   always @(posedge clk)
   begin
     if (rst)
       data_out <= 64'd0;
     else if (enc_op_sel)
-      data_out <= enc_data_out;
+      rd_wr<=1;
     else
+      rd_wr<=0;
       data_out <= dec_data_out;
   end
 endmodule

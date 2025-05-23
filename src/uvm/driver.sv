@@ -33,11 +33,20 @@ class rce_driver extends uvm_driver#(rce_seq_item);
   task drive(rce_seq_item tx);
     @(posedge intf.clk)
     intf.rst <= tx.rst;
-    intf.enc_op_sel<=tx.enc_op_sel;
-    intf.data_in<=tx.data_in;
+    intf.data<=tx.data;
+    intf.address<=tx.address;
     intf.key<=tx.key;
     intf.data_out<=tx.data_out;
-    intf.sha_error<=tx.sha_error;
-    
+    intf.sha_error_out<=tx.sha_error_out;
+    intf.awvalid<=tx.awvalid;
+    intf.wvalid<=tx.wvalid;
+    intf.bready<=tx.bready;
+    intf.arvalid<=tx.arvalid;
+    intf.rready<=tx.rready;
+    intf.awready<=tx.awready; 
+    intf.wready<=tx.wready;
+    intf.bvalid<=tx.bvalid;
+    intf.arready<=tx.arready;
+    intf.rvalid<=tx.rvalid;
   endtask
 endclass

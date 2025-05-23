@@ -1,3 +1,4 @@
+
 // UVM component class
 class rce_scoreboard extends uvm_scoreboard;
   `uvm_component_utils(rce_scoreboard)
@@ -21,20 +22,21 @@ class rce_scoreboard extends uvm_scoreboard;
   endfunction
 
   // Reference encryption function (simple dummy logic — replace with real RAVAN model)
-  function logic [63:0] reference_model(logic [63:0] data_in, logic [511:0] key, logic [2:0] enc_op_sel);
-    logic [63:0] result;
+ function logic [63:0] reference_model(logic [63:0] data, logic [511:0] key, logic [2:0] enc_op_sel);
+  logic [63:0] result;
 
-    case (enc_op_sel)
-      3'b000: result = data_in ^ key;                    // XOR (basic op)
-      3'b001: result = ~(data_in ^ key);                 // NXOR
-      3'b010: result = (data_in & key) | (~data_in);     // sample complex op
-      3'b011: result = data_in + key;                    // addition
-      3'b100: result = data_in - key;                    // subtraction
-      default: result = 64'hDEADBEEF_DEADBEEF;          // catch-all
-    endcase
+  case (enc_op_sel)
+    3'b000: result = data ^ key[63:0];          // XOR
+    3'b001: result = ~(data ^ key[63:0]);       // NXOR
+    3'b010: result = (data & key[63:0]) | (~data);  // Complex op
+    3'b011: result = data + key[63:0];          // Add
+    3'b100: result = data - key[63:0];          // Sub
+    default: result = 64'hDEADBEEF_DEADBEEF;    // Fallback
+  endcase
 
-    return result;
-  endfunction
+  return result;
+endfunction
+
     logic  [63:0] expected_data;
     
   // Write task - receives from monitor and validates
@@ -42,7 +44,7 @@ class rce_scoreboard extends uvm_scoreboard;
     tx_data_out.push_back(tx);
   
 
-    expected_data = reference_model(tx.data_in, tx.key, tx.enc_op_sel);
+    expected_data = reference_model(tx.data, tx.key, tx.enc_op_sel);
 
     // Logging for debug
     `uvm_info("SCOREBOARD", $sformatf(

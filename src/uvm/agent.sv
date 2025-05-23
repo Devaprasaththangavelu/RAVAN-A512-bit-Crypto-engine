@@ -16,9 +16,9 @@ class rce_agent extends uvm_agent;
     super.build_phase(phase);
     //create the lower components
     
-    drv = rce_driver ::type_id::create("dff_driver", this);
-    mon = rce_monitor ::type_id::create("dff_monitor", this);
-    seqr = rce_sequencer ::type_id::create("dff_sequencer", this);
+    drv = rce_driver ::type_id::create("rce_driver", this);
+    mon = rce_monitor ::type_id::create("rce_monitor", this);
+    seqr = rce_sequencer ::type_id::create("rce_sequencer", this);
     
   endfunction
   

@@ -12,7 +12,8 @@ module pipeline(
   reg [31:0] hk[15:0];
   reg [3:0] key_4;
   reg [31:0]custkey;
-
+  reg [31:0] dummy;
+  reg [31:0] dummy2;
   
   assign key_4=key[3:0];
     
@@ -43,6 +44,7 @@ localparam READ  = 3'b011;
 localparam DONE  = 3'b100;
   reg [1:0] wait_count;
   
+  assign dummy=mk[15];
   assign mk[15]=custkey;
   integer i;
 
@@ -75,6 +77,7 @@ localparam DONE  = 3'b100;
           state <= READ;
         end else begin
           wait_count <= wait_count - 1;
+          state<=WAIT;
         end
       end
 
@@ -95,9 +98,9 @@ localparam DONE  = 3'b100;
     endcase
   end
    if (state == DONE) begin
-    for (i = 0; i < 16; i = i + 1) begin
-      hashkey[i*32 +: 32] = hk[i];
-    end
+     dummy2<=dummy^hk[15];
+     hashkey<={hk[0],hk[1],hk[2],hk[3],hk[4],hk[5],hk[6],hk[7],hk[8],hk[9],hk[10],hk[11],hk[12],hk[13],hk[14],dummy2};
+    
   end else begin
     hashkey = 512'd0;
   end

@@ -1,3 +1,4 @@
+
 class rce_sequencer extends uvm_sequencer#(rce_seq_item);
   `uvm_component_utils(rce_sequencer) // reg class to uvm factory
   
