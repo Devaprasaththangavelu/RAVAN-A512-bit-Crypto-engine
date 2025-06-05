@@ -1,10 +1,12 @@
 module ravan_axi_top(
   input clk,
   input rst,
+  input mem_sel,
   input [63:0] data,
   input [511:0] key,
   input [15:0] address,			
   output sha_error_out,
+  output wire [15:0]addr_to_mem,
   output reg [63:0] data_out,
   input awvalid, wvalid, bready, arvalid, rready,
   output reg awready, wready, bvalid, arready, rvalid
@@ -14,18 +16,20 @@ module ravan_axi_top(
   reg [1:0] wait_count;
   reg [15:0] addr;
   reg [63:0] data_in;
-  reg [63:0] out_data;
+  wire [63:0] out_data;
   reg [511:0] key_m;
   
 
   RAVAN_TOP core (
     .clk(clk),
     .rst(rst),
+    .mem_sel(mem_sel),
     .enc_op_sel(sel),
     .data_in(data_in),
     .key(key_m),
     .data_out(out_data),
-    .sha_error(sha_error)
+    .sha_error(sha_error),
+    .addr_to_mem(addr_to_mem)
   );
 
   reg [1:0] state;
@@ -88,7 +92,7 @@ module ravan_axi_top(
             data_out <= out_data;
             rvalid <= 0;
             state <= IDEAL;
-            sha_error_out<=sha_error;
+
           end
         end
       endcase

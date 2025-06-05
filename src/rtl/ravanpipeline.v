@@ -7,12 +7,12 @@ module pipeline(
   reg cs,we;
   reg [7:0]addr;
   reg [31:0] wr_data;
-  reg [31:0] rd_data;
-  reg [31:0] mk[15:0];
+  wire [31:0] rd_data;
+  wire [31:0] mk[15:0];
   reg [31:0] hk[15:0];
-  reg [3:0] key_4;
-  reg [31:0]custkey;
-  reg [31:0] dummy;
+  wire [3:0] key_4;
+  wire [31:0]custkey;
+  wire [31:0] dummy;
   reg [31:0] dummy2;
   
   assign key_4=key[3:0];
@@ -48,7 +48,7 @@ localparam DONE  = 3'b100;
   assign mk[15]=custkey;
   integer i;
 
- always @(posedge clk or posedge rst) begin
+ always @(*) begin
   if (rst) begin
     sel      <= 0;
     cs       <= 0;

@@ -12,7 +12,7 @@ module key_reduction(
   always @ (posedge  clk)
     begin
   
-  assign red_key1={ key[5]^ key[12], key[79]^ key[33], key[248]^ key[201], key[17]^ key[92],
+  red_key1={ key[5]^ key[12], key[79]^ key[33], key[248]^ key[201], key[17]^ key[92],
                     key[401]^ key[300], key[150]^key[4], key[222]^key[98], key[43]^key[7],
                     key[480]^ key[203],key[9]^ key[376], key[81]^ key[29], key[87]^ key[310],
                     key[102]^ key[56], key[240]^ key[330], key[360]^ key[127], key[511]^ key[288],
@@ -78,7 +78,7 @@ module key_reduction(
                     key[417]^ key[418], key[419]^ key[420], key[421]^ key[422], key[423]^ key[424]};
 
                  
-  assign red_key2={red_key1[82]&red_key1[99], red_key1[1]&red_key1[237], red_key1[231]&red_key1[56], red_key1[24]&red_key1[67],
+   red_key2={red_key1[82]&red_key1[99], red_key1[1]&red_key1[237], red_key1[231]&red_key1[56], red_key1[24]&red_key1[67],
 red_key1[140]&red_key1[224], red_key1[143]&red_key1[121], red_key1[244]&red_key1[241], red_key1[125]&red_key1[214],
 red_key1[207]&red_key1[97], red_key1[192]&red_key1[93], red_key1[105]&red_key1[234], red_key1[16]&red_key1[110],
 red_key1[10]&red_key1[32], red_key1[225]&red_key1[156], red_key1[47]&red_key1[57], red_key1[23]&red_key1[242],
@@ -112,7 +112,7 @@ red_key1[158]&red_key1[59], red_key1[17]&red_key1[41], red_key1[50]&red_key1[228
 red_key1[251]&red_key1[249], red_key1[167]&red_key1[218], red_key1[49]&red_key1[212], red_key1[141]&red_key1[98]
 
 };
-                    assign red_key3={red_key2[62]|red_key2[42], red_key2[49]|red_key2[17], red_key2[1]|red_key2[43], red_key2[33]|red_key2[20],
+                     red_key3={red_key2[62]|red_key2[42], red_key2[49]|red_key2[17], red_key2[1]|red_key2[43], red_key2[33]|red_key2[20],
 red_key2[46]|red_key2[11], red_key2[47]|red_key2[24], red_key2[18]|red_key2[16], red_key2[50]|red_key2[26],
 red_key2[10]|red_key2[2],  red_key2[4]|red_key2[25],  red_key2[15]|red_key2[54], red_key2[5]|red_key2[22],
 red_key2[38]|red_key2[9],  red_key2[27]|red_key2[6],  red_key2[13]|red_key2[37], red_key2[0]|red_key2[19],
@@ -129,7 +129,7 @@ red_key2[89] | red_key2[95],  red_key2[117] | red_key2[85], red_key2[113] | red_
 red_key2[111] | red_key2[81], red_key2[74] | red_key2[80], red_key2[65] | red_key2[98], red_key2[72] | red_key2[68]
 
 };
-                    assign red_key4={red_key3[62]&red_key3[42], red_key3[49]&red_key3[17], red_key3[1]&red_key3[43], red_key3[33]&red_key3[20],
+                     red_key4={red_key3[62]&red_key3[42], red_key3[49]&red_key3[17], red_key3[1]&red_key3[43], red_key3[33]&red_key3[20],
     red_key3[46]&red_key3[11], red_key3[47]&red_key3[24], red_key3[18]&red_key3[16], red_key3[50]&red_key3[26],
     red_key3[10]&red_key3[2],  red_key3[4]&red_key3[25],  red_key3[15]&red_key3[54], red_key3[5]&red_key3[22],
     red_key3[38]&red_key3[9],  red_key3[27]&red_key3[6],  red_key3[13]&red_key3[37], red_key3[0]&red_key3[19],
@@ -139,7 +139,7 @@ red_key2[111] | red_key2[81], red_key2[74] | red_key2[80], red_key2[65] | red_ke
     red_key3[44]&red_key3[32], red_key3[60]&red_key3[35], red_key3[3]&red_key3[63],  red_key3[14]&red_key3[8]
 };
 
-  assign red_key={
+   red_key={
     red_key4[31]&red_key4[15],  // bit 15 of red_key4
     red_key4[30]&red_key4[14],  // bit 14
     red_key4[29]&red_key4[13],  // bit 13

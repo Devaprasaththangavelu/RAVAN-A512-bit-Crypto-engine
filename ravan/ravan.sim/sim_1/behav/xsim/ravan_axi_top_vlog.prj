@@ -1,0 +1,25 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../src/rtl/custom32.v" \
+"../../../../../src/rtl/decryption.v" \
+"../../../../../src/rtl/dynamickey.v" \
+"../../../../../src/rtl/encryption.v" \
+"../../../../../src/rtl/key_reduction.v" \
+"../../../../../src/rtl/memory.v" \
+"../../../../../src/rtl/ravanpipeline.v" \
+"../../../../../src/rtl/sha.v" \
+"../../../../../src/rtl/sha_constrants.v" \
+"../../../../../src/rtl/sha_core.v" \
+"../../../../../src/rtl/sha_mem.v" \
+
+sv xil_defaultlib  \
+"../../../../../src/rtl/design.sv" \
+
+verilog xil_defaultlib  \
+"../../../../../src/rtl/ravan_axi_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

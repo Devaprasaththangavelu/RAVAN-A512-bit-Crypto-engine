@@ -1,7 +1,8 @@
 module RAVAN_TOP(
-  input clk, rst, enc_op_sel,
+  input clk, rst, enc_op_sel,mem_sel,
   input [63:0] data_in,
   input [511:0] key,
+  output reg [15:0]addr_to_mem,
   output reg [63:0] data_out,
   output sha_error
 );
@@ -56,10 +57,20 @@ module RAVAN_TOP(
   begin
     if (rst)
       data_out <= 64'd0;
-    else if (enc_op_sel)
+    else if(mem_sel==0)
+    begin
+     if (enc_op_sel)
       rd_wr<=1;
     else
       rd_wr<=0;
       data_out <= dec_data_out;
+      end
+      else if(enc_op_sel)
+      begin
+      addr_to_mem<=add;
+      data_out<=enc_data_out;
+      end else
+      data_out<=dec_data_out;
+      addr_to_mem<=add;
   end
 endmodule

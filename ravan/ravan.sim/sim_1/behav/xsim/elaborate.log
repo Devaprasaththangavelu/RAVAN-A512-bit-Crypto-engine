@@ -1,0 +1,28 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot ravan_axi_top_behav xil_defaultlib.ravan_axi_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/ravan crypto/ravan/ravan.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/ravan crypto/ravan/ravan.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.sha256_k_constants
+Compiling module xil_defaultlib.sha256_w_mem
+Compiling module xil_defaultlib.sha256_core
+Compiling module xil_defaultlib.sha256
+Compiling module xil_defaultlib.custom32
+Compiling module xil_defaultlib.pipeline
+Compiling module xil_defaultlib.DynamicKeySlicer
+Compiling module xil_defaultlib.RAVAN_encryption
+Compiling module xil_defaultlib.RAVAN_decryption
+Compiling module xil_defaultlib.memory
+Compiling module xil_defaultlib.key_reduction
+Compiling module xil_defaultlib.RAVAN_TOP
+Compiling module xil_defaultlib.ravan_axi_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot ravan_axi_top_behav

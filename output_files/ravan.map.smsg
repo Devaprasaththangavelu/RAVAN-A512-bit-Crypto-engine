@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at ravanpipeline.v(51): always construct contains both blocking and non-blocking assignments File: D:/ravan crypto/src/rtl/ravanpipeline.v Line: 51
+Warning (10268): Verilog HDL information at encryption.v(25): always construct contains both blocking and non-blocking assignments File: D:/ravan crypto/src/rtl/encryption.v Line: 25
+Warning (10268): Verilog HDL information at decryption.v(26): always construct contains both blocking and non-blocking assignments File: D:/ravan crypto/src/rtl/decryption.v Line: 26

@@ -1,0 +1,7 @@
+Running: xsim.dir/ravan_axi_top_behav/xsimk.exe -simmode gui -wdb ravan_axi_top_behav.wdb -simrunnum 0 -socket 50608
+Design successfully loaded
+Design Loading Memory Usage: 10148 KB (Peak: 10148 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 11300 KB (Peak: 11300 KB)
+Simulation CPU Usage: 15 ms

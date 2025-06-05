@@ -1,0 +1,28 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/custom32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module custom32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/decryption.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAVAN_decryption
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/dynamickey.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DynamicKeySlicer
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/encryption.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAVAN_encryption
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/key_reduction.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module key_reduction
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/ravanpipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/sha.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sha256
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/sha_constrants.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sha256_k_constants
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/sha_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sha256_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/sha_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sha256_w_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ravan crypto/src/rtl/design.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAVAN_TOP
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/src/rtl/ravan_axi_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ravan_axi_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/ravan/ravan.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

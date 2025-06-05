@@ -5,20 +5,44 @@ module RAVAN_decryption(
   input [511:0] key,
   output reg[63:0] dec_data_out
 );
-  reg [63:0] sliced_key [7:0];//dynamic key slicing
+  wire [63:0] sliced_key [7:0];//dynamic key slicing
   reg [63:0] temp_data;//temprovary processing data
   reg [63:0] mask;
   reg [63:0] fac_mem[0:1];
   reg [63:0] dummy0;
   reg [63:0] dummy1;
   reg [63:0] dummy2;
-  
+  wire [63:0]key0;
+  wire [63:0]key1;
+  wire [63:0]key2;
+  wire [63:0]key3;
+  wire [63:0]key4;
+  wire [63:0]key5;
+  wire [63:0]key6;
+  wire [63:0]key7;
+
+
   
   DynamicKeySlicer key_slicing(//dynamic key slicing instance
     .key(key),
-    .sliced_key(sliced_key)
+    .sliced_key1(key0),
+    .sliced_key2(key1),
+    .sliced_key3(key2),
+    .sliced_key4(key3),
+    .sliced_key5(key4),
+    .sliced_key6(key5),
+    .sliced_key7(key6),
+    .sliced_key8(key7)
   );
- 
+assign sliced_key[0]=key0;
+assign sliced_key[1]=key1;
+assign sliced_key[2]=key2;
+assign sliced_key[3]=key3;
+assign sliced_key[4]=key4;
+assign sliced_key[5]=key5;
+assign sliced_key[6]=key6;
+assign sliced_key[7]=key7;
+
   integer i;// for sliced key 
   integer round;//for 21 rounds
   

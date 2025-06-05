@@ -1,0 +1,831 @@
+
+*** Running vivado
+    with args -log ravan_axi_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ravan_axi_top.tcl
+
+
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source ravan_axi_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 473.188 ; gain = 179.258
+Command: read_checkpoint -auto_incremental -incremental {D:/ravan crypto/ravan/ravan.srcs/utils_1/imports/synth_1/ravan_axi_top.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/ravan crypto/ravan/ravan.srcs/utils_1/imports/synth_1/ravan_axi_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top ravan_axi_top -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9664
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 923.738 ; gain = 439.137
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'slicedkey', assumed default net type 'wire' [D:/ravan crypto/src/rtl/dynamickey.v:97]
+INFO: [Synth 8-11241] undeclared symbol 'sha_error', assumed default net type 'wire' [D:/ravan crypto/src/rtl/ravan_axi_top.v:31]
+INFO: [Synth 8-6157] synthesizing module 'ravan_axi_top' [D:/ravan crypto/src/rtl/ravan_axi_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAVAN_TOP' [D:/ravan crypto/src/rtl/design.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipeline' [D:/ravan crypto/src/rtl/ravanpipeline.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sha256' [D:/ravan crypto/src/rtl/sha.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sha256_core' [D:/ravan crypto/src/rtl/sha_core.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sha256_k_constants' [D:/ravan crypto/src/rtl/sha_constrants.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_k_constants' (0#1) [D:/ravan crypto/src/rtl/sha_constrants.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sha256_w_mem' [D:/ravan crypto/src/rtl/sha_mem.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_w_mem' (0#1) [D:/ravan crypto/src/rtl/sha_mem.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/ravan crypto/src/rtl/sha_core.v:452]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_core' (0#1) [D:/ravan crypto/src/rtl/sha_core.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sha256' (0#1) [D:/ravan crypto/src/rtl/sha.v:1]
+INFO: [Synth 8-6157] synthesizing module 'custom32' [D:/ravan crypto/src/rtl/custom32.v:1]
+INFO: [Synth 8-226] default block is never used [D:/ravan crypto/src/rtl/custom32.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'custom32' (0#1) [D:/ravan crypto/src/rtl/custom32.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/ravan crypto/src/rtl/ravanpipeline.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline' (0#1) [D:/ravan crypto/src/rtl/ravanpipeline.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAVAN_encryption' [D:/ravan crypto/src/rtl/encryption.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DynamicKeySlicer' [D:/ravan crypto/src/rtl/dynamickey.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DynamicKeySlicer' (0#1) [D:/ravan crypto/src/rtl/dynamickey.v:1]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:76]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:77]
+WARNING: [Synth 8-6090] variable 'temp_data' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/ravan crypto/src/rtl/encryption.v:75]
+INFO: [Common 17-14] Message 'Synth 8-6090' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'RAVAN_encryption' (0#1) [D:/ravan crypto/src/rtl/encryption.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAVAN_decryption' [D:/ravan crypto/src/rtl/decryption.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RAVAN_decryption' (0#1) [D:/ravan crypto/src/rtl/decryption.v:1]
+INFO: [Synth 8-6157] synthesizing module 'memory' [D:/ravan crypto/src/rtl/memory.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (0#1) [D:/ravan crypto/src/rtl/memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'key_reduction' [D:/ravan crypto/src/rtl/key_reduction.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'key_reduction' (0#1) [D:/ravan crypto/src/rtl/key_reduction.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'RAVAN_TOP' (0#1) [D:/ravan crypto/src/rtl/design.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ravan_axi_top' (0#1) [D:/ravan crypto/src/rtl/ravan_axi_top.v:1]
+WARNING: [Synth 8-3848] Net mk[14] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[13] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[12] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[11] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[10] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[9] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[8] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[7] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[6] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[5] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[4] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[3] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[2] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[1] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net mk[0] in module/entity pipeline does not have driver. [D:/ravan crypto/src/rtl/ravanpipeline.v:11]
+WARNING: [Synth 8-3848] Net sliced_key1 in module/entity DynamicKeySlicer does not have driver. [D:/ravan crypto/src/rtl/dynamickey.v:3]
+WARNING: [Synth 8-3848] Net sliced_key2 in module/entity DynamicKeySlicer does not have driver. [D:/ravan crypto/src/rtl/dynamickey.v:3]
+WARNING: [Synth 8-3848] Net sliced_key3 in module/entity DynamicKeySlicer does not have driver. [D:/ravan crypto/src/rtl/dynamickey.v:3]
+WARNING: [Synth 8-3848] Net sliced_key4 in module/entity DynamicKeySlicer does not have driver. [D:/ravan crypto/src/rtl/dynamickey.v:3]
+WARNING: [Synth 8-3848] Net sliced_key5 in module/entity DynamicKeySlicer does not have driver. [D:/ravan crypto/src/rtl/dynamickey.v:3]
+WARNING: [Synth 8-3848] Net sliced_key6 in module/entity DynamicKeySlicer does not have driver. [D:/ravan crypto/src/rtl/dynamickey.v:3]
+WARNING: [Synth 8-3848] Net sliced_key7 in module/entity DynamicKeySlicer does not have driver. [D:/ravan crypto/src/rtl/dynamickey.v:3]
+WARNING: [Synth 8-3848] Net sliced_key8 in module/entity DynamicKeySlicer does not have driver. [D:/ravan crypto/src/rtl/dynamickey.v:3]
+WARNING: [Synth 8-6014] Unused sequential element dummy0_reg was removed.  [D:/ravan crypto/src/rtl/encryption.v:52]
+WARNING: [Synth 8-6014] Unused sequential element dummy1_reg was removed.  [D:/ravan crypto/src/rtl/encryption.v:53]
+WARNING: [Synth 8-6014] Unused sequential element dummy2_reg was removed.  [D:/ravan crypto/src/rtl/encryption.v:54]
+WARNING: [Synth 8-6014] Unused sequential element fac_mem_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element dummy0_reg was removed.  [D:/ravan crypto/src/rtl/decryption.v:55]
+WARNING: [Synth 8-6014] Unused sequential element dummy1_reg was removed.  [D:/ravan crypto/src/rtl/decryption.v:56]
+WARNING: [Synth 8-6014] Unused sequential element dummy2_reg was removed.  [D:/ravan crypto/src/rtl/decryption.v:57]
+WARNING: [Synth 8-6014] Unused sequential element fac_mem_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element red_key1_reg was removed.  [D:/ravan crypto/src/rtl/key_reduction.v:15]
+WARNING: [Synth 8-6014] Unused sequential element red_key2_reg was removed.  [D:/ravan crypto/src/rtl/key_reduction.v:81]
+WARNING: [Synth 8-6014] Unused sequential element red_key3_reg was removed.  [D:/ravan crypto/src/rtl/key_reduction.v:115]
+WARNING: [Synth 8-6014] Unused sequential element red_key4_reg was removed.  [D:/ravan crypto/src/rtl/key_reduction.v:132]
+WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [D:/ravan crypto/src/rtl/ravan_axi_top.v:66]
+WARNING: [Synth 8-7137] Register data_in_reg in module ravan_axi_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/ravan crypto/src/rtl/ravan_axi_top.v:28]
+WARNING: [Synth 8-7137] Register key_m_reg in module ravan_axi_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/ravan crypto/src/rtl/ravan_axi_top.v:29]
+WARNING: [Synth 8-7137] Register data_out_reg in module ravan_axi_top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/ravan crypto/src/rtl/ravan_axi_top.v:92]
+WARNING: [Synth 8-3848] Net sha_error_out in module/entity ravan_axi_top does not have driver. [D:/ravan crypto/src/rtl/ravan_axi_top.v:8]
+WARNING: [Synth 8-7129] Port key[510] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[509] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[508] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[507] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[505] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[504] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[503] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[502] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[501] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[498] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[497] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[496] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[495] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[494] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[493] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[492] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[491] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[490] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[489] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[488] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[487] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[486] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[485] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[484] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[482] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[481] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[479] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[478] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[477] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[476] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[475] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[474] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[473] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[472] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[471] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[469] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[468] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[467] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[466] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[464] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[463] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[462] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[461] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[459] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[458] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[457] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[455] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[454] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[453] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[452] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[451] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[450] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[447] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[446] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[445] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[442] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[441] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[439] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[438] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[437] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[435] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[434] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[432] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[431] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[429] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[428] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[426] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[425] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[359] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[358] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[357] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[353] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[352] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[351] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[350] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[349] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[348] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[347] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[346] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[344] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[342] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[340] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[339] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[336] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[335] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[334] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[332] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[331] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[328] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[327] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[326] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[325] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[324] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[323] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[318] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[316] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[314] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[313] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[309] in module key_reduction is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[302] in module key_reduction is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1098.609 ; gain = 614.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.609 ; gain = 614.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.609 ; gain = 614.008
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'sha256_ctrl_reg_reg' in module 'sha256_core'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ravan_axi_top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               CTRL_IDLE |                              001 |                               00
+             CTRL_ROUNDS |                              010 |                               01
+               CTRL_DONE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sha256_ctrl_reg_reg' using encoding 'one-hot' in module 'sha256_core'
+WARNING: [Synth 8-327] inferring latch for variable 'hashkey_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:102]
+WARNING: [Synth 8-327] inferring latch for variable 'state_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:57]
+WARNING: [Synth 8-327] inferring latch for variable 'dummy2_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:101]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[14]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[13]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[12]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[11]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[10]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[9]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[8]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[7]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[6]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[5]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[4]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[3]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[2]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[1]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[0]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'cs_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:23]
+WARNING: [Synth 8-327] inferring latch for variable 'we_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:24]
+WARNING: [Synth 8-327] inferring latch for variable 'addr_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:25]
+WARNING: [Synth 8-327] inferring latch for variable 'wr_data_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:26]
+WARNING: [Synth 8-327] inferring latch for variable 'wait_count_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:58]
+WARNING: [Synth 8-327] inferring latch for variable 'sel_reg' [D:/ravan crypto/src/rtl/ravanpipeline.v:53]
+WARNING: [Synth 8-327] inferring latch for variable 'hk_reg[15]' [D:/ravan crypto/src/rtl/ravanpipeline.v:85]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   IDEAL |                               00 |                               00
+                   WRITE |                               01 |                               01
+                    WAIT |                               10 |                               10
+                    READ |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ravan_axi_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1098.609 ; gain = 614.008
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   64 Bit       Adders := 336   
+	   4 Input   32 Bit       Adders := 1     
+	   5 Input   32 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 2     
++---XORs : 
+	   2 Input     64 Bit         XORs := 338   
+	   3 Input     64 Bit         XORs := 1     
+	   3 Input     32 Bit         XORs := 5     
+	   2 Input     32 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 256   
++---Registers : 
+	              512 Bit    Registers := 1     
+	              256 Bit    Registers := 1     
+	               64 Bit    Registers := 10    
+	               32 Bit    Registers := 40    
+	               16 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 13    
++---RAMs : 
+	            4096K Bit	(65536 X 64 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input  512 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 74    
+	   6 Input   32 Bit        Muxes := 1     
+	   2 Input   31 Bit        Muxes := 2     
+	   2 Input   30 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 4     
+	   7 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   6 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 33    
+	   3 Input    1 Bit        Muxes := 4     
+	   7 Input    1 Bit        Muxes := 19    
+	   6 Input    1 Bit        Muxes := 5     
+	   4 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "custkey" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4652] Swapped enable and write-enable on 64 RAM instances of RAM memory_core/mem_reg to conserve power
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/addr_reg[7]' (LDC) to 'pipeline_unit/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/addr_reg[6]' (LDC) to 'pipeline_unit/addr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/addr_reg[5]' (LDC) to 'pipeline_unit/addr_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/addr_reg[4] )
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][3]' (LD) to 'pipeline_unit/hk_reg[15][31]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][4]' (LD) to 'pipeline_unit/hk_reg[15][29]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][5]' (LD) to 'pipeline_unit/hk_reg[15][29]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][6]' (LD) to 'pipeline_unit/hk_reg[15][31]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][7]' (LD) to 'pipeline_unit/hk_reg[15][31]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][9]' (LD) to 'pipeline_unit/hk_reg[15][31]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][10]' (LD) to 'pipeline_unit/hk_reg[15][27]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][11]' (LD) to 'pipeline_unit/hk_reg[15][18]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][12]' (LD) to 'pipeline_unit/hk_reg[15][17]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][13]' (LD) to 'pipeline_unit/hk_reg[15][29]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][14]' (LD) to 'pipeline_unit/hk_reg[15][30]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][15]' (LD) to 'pipeline_unit/hk_reg[15][31]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][16]' (LD) to 'pipeline_unit/hk_reg[15][31]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][19]' (LD) to 'pipeline_unit/hk_reg[15][28]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][20]' (LD) to 'pipeline_unit/hk_reg[15][27]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][21]' (LD) to 'pipeline_unit/hk_reg[15][29]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][22]' (LD) to 'pipeline_unit/hk_reg[15][30]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][23]' (LD) to 'pipeline_unit/hk_reg[15][31]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][24]' (LD) to 'pipeline_unit/hk_reg[15][29]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][25]' (LD) to 'pipeline_unit/hk_reg[15][30]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hk_reg[15][26]' (LD) to 'pipeline_unit/hk_reg[15][27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[15][31] )
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[15][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[14][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[13][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[12][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[11][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[10][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[9][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[8][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[7][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[6][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[5][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[4][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[3][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[2][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[1][0]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[0][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][0] )
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[15][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[14][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[13][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[12][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[11][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[10][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[9][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[8][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[7][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[6][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[5][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[4][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[3][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[2][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[1][1]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[0][1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][1] )
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[15][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[14][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[13][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[12][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[11][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[10][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[9][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[8][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[7][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[6][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[5][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[4][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[3][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[2][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[1][2]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[0][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][2] )
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[15][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[14][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[13][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[12][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[11][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[10][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[9][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[8][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[7][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[6][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[5][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[4][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[3][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[2][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[1][3]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[0][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][3] )
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[15][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[14][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[13][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[12][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[11][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[10][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[9][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[8][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[7][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[6][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[5][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[4][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[3][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[2][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[1][4]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[0][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][4] )
+INFO: [Synth 8-3886] merging instance 'pipeline_unit/hash_unit/block_reg_reg[15][5]' (FDCE) to 'pipeline_unit/hash_unit/block_reg_reg[1][5]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hash_unit /\block_reg_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[14][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[13][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[12][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[11][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[10][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[9][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[8][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[7][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[6][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[5][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[4][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[3][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[2][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[1][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pipeline_unit/hk_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ravan_key_reduction_core/red_key_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ravan_key_reduction_core/red_key_reg[14] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:01:50 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-------------------+------------+---------------+----------------+
+|Module Name        | RTL Object | Depth x Width | Implemented As | 
++-------------------+------------+---------------+----------------+
+|sha256_k_constants | tmp_K      | 64x32         | LUT            | 
++-------------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++---------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object          | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|RAVAN_TOP__GC0 | memory_core/mem_reg | 64 K x 64(READ_FIRST)  | W |   | 64 K x 64(WRITE_FIRST) |   | R | Port A and B     | 0      | 128    | 
++---------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:01:52 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++---------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object          | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|RAVAN_TOP__GC0 | memory_core/mem_reg | 64 K x 64(READ_FIRST)  | W |   | 64 K x 64(WRITE_FIRST) |   | R | Port A and B     | 0      | 128    | 
++---------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_16 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_17 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_18 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_19 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_20 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_21 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_22 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_23 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_24 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_25 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_26 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_27 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_28 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_29 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_30 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_31 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_32 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_33 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_34 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_35 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_36 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_37 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_38 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_39 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_40 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_41 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_42 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_43 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_44 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_45 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_46 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_47 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_48 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_49 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_50 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_51 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_52 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_53 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_54 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_55 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_56 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_57 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_58 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_59 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_60 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_61 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_62 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/memory_core/mem_reg_1_63 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:01:59 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:02:11 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:02:11 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:02:14 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:02:14 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:02:15 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:02:15 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |  5376|
+|3     |LUT1     | 10651|
+|4     |LUT2     | 21974|
+|5     |LUT3     |    15|
+|6     |LUT4     |    93|
+|7     |LUT5     |    50|
+|8     |LUT6     |   185|
+|9     |RAMB36E1 |   128|
+|10    |FDCE     |    23|
+|11    |FDPE     |     2|
+|12    |FDRE     |   804|
+|13    |FDSE     |    72|
+|14    |LD       |   159|
+|15    |LDC      |    12|
+|16    |IBUF     |    76|
+|17    |OBUF     |    85|
+|18    |OBUFT    |     1|
++------+---------+------+
+
+Report Instance Areas: 
++------+-----------------------------+-----------------+------+
+|      |Instance                     |Module           |Cells |
++------+-----------------------------+-----------------+------+
+|1     |top                          |                 | 39707|
+|2     |  core                       |RAVAN_TOP        | 39196|
+|3     |    decryption_core          |RAVAN_decryption | 24282|
+|4     |    encrypt_core             |RAVAN_encryption | 14015|
+|5     |    memory_core              |memory           |   262|
+|6     |    pipeline_unit            |pipeline         |   467|
+|7     |      hash_unit              |sha256           |    36|
+|8     |        core                 |sha256_core      |    24|
+|9     |    ravan_key_reduction_core |key_reduction    |    91|
++------+-----------------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:02:15 . Memory (MB): peak = 1300.629 ; gain = 816.027
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2903 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:02:17 . Memory (MB): peak = 1300.629 ; gain = 816.027
+Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:02:17 . Memory (MB): peak = 1300.629 ; gain = 816.027
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.881 . Memory (MB): peak = 1329.695 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 5675 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1449.234 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 171 instances were transformed.
+  LD => LDCE: 159 instances
+  LDC => LDCE: 12 instances
+
+The system cannot find the path specified.
+Synth Design complete | Checksum: adfcc589
+INFO: [Common 17-83] Releasing license: Synthesis
+273 Infos, 266 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:02:34 . Memory (MB): peak = 1449.234 ; gain = 971.109
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.271 . Memory (MB): peak = 1449.234 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/ravan crypto/ravan/ravan.runs/synth_1/ravan_axi_top.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1449.234 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file ravan_axi_top_utilization_synth.rpt -pb ravan_axi_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  3 10:02:08 2025...
