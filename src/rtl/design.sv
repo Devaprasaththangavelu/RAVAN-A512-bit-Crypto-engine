@@ -1,8 +1,9 @@
 module RAVAN_TOP(
   input clk, rst, enc_op_sel,mem_sel,
   input [63:0] data_in,
+  input [31:0] address,
   input [511:0] key,
-  output reg [15:0]addr_to_mem,
+  output wire [31:0]addr_to_mem,
   output reg [63:0] data_out,
   output sha_error
 );
@@ -10,12 +11,14 @@ module RAVAN_TOP(
   reg [63:0] dec_data_in;  
   wire [63:0] dec_data_out;
   reg  [511:0] hashkey;
-  reg [15:0] add;
+
   reg rd_wr;
   
   pipeline pipeline_unit( // pipe line for the hashing 
     .clk(clk),
     .rst(rst),
+    .address(address),
+    .opt_address(address_to_mem),
     .key(key),
     .hashkey(hashkey),
     .sha_error(sha_error)
@@ -67,10 +70,10 @@ module RAVAN_TOP(
       end
       else if(enc_op_sel)
       begin
-      addr_to_mem<=add;
+      
       data_out<=enc_data_out;
       end else
       data_out<=dec_data_out;
-      addr_to_mem<=add;
+
   end
 endmodule

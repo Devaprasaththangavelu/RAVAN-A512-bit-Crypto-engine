@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ravan crypto/ravan/ravan.sim/sim_1/synth/func/xsim/ravan_axi_top_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAVAN_TOP
+INFO: [VRFC 10-311] analyzing module RAVAN_decryption
+INFO: [VRFC 10-311] analyzing module RAVAN_encryption
+INFO: [VRFC 10-311] analyzing module key_reduction
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module ravan_axi_top
+INFO: [VRFC 10-311] analyzing module sha256
+INFO: [VRFC 10-311] analyzing module glbl

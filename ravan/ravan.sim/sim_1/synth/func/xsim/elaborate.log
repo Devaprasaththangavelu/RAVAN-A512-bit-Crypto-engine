@@ -1,0 +1,42 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot ravan_axi_top_func_synth xil_defaultlib.ravan_axi_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.OBUFT
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.CARRY4
+Compiling module unisims_ver.FDSE_default
+Compiling module xil_defaultlib.RAVAN_decryption
+Compiling module xil_defaultlib.RAVAN_encryption
+Compiling module unisims_ver.RAM32X1S
+Compiling module xil_defaultlib.memory
+Compiling module unisims_ver.latchsre_ldce
+Compiling module unisims_ver.LDCE
+Compiling module unisims_ver.FDPE_default
+Compiling module xil_defaultlib.sha256
+Compiling module xil_defaultlib.pipeline
+Compiling module xil_defaultlib.key_reduction
+Compiling module xil_defaultlib.RAVAN_TOP
+Compiling module xil_defaultlib.ravan_axi_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot ravan_axi_top_func_synth

@@ -1,6 +1,8 @@
 module pipeline(
   input clk,rst,
+  input [31:0] address,
   input [511:0]key,
+  output reg [31:0]opt_address,
   output reg [511:0]hashkey,
   output sha_error
 );
@@ -8,8 +10,8 @@ module pipeline(
   reg [7:0]addr;
   reg [31:0] wr_data;
   wire [31:0] rd_data;
-  wire [31:0] mk[15:0];
-  reg [31:0] hk[15:0];
+  wire [31:0] mk[16:0];
+  reg [31:0] hk[16:0];
   wire [3:0] key_4;
   wire [31:0]custkey;
   wire [31:0] dummy;
@@ -46,6 +48,7 @@ localparam DONE  = 3'b100;
   
   assign dummy=mk[15];
   assign mk[15]=custkey;
+  assign mk[16]=address;
   integer i;
 
  always @(*) begin
@@ -56,6 +59,7 @@ localparam DONE  = 3'b100;
     addr     <= 0;
     state    <= IDLE;
     wait_count <= 0;
+
   end else begin
     case (state)
       IDLE: begin
@@ -100,7 +104,7 @@ localparam DONE  = 3'b100;
    if (state == DONE) begin
      dummy2<=dummy^hk[15];
      hashkey<={hk[0],hk[1],hk[2],hk[3],hk[4],hk[5],hk[6],hk[7],hk[8],hk[9],hk[10],hk[11],hk[12],hk[13],hk[14],dummy2};
-    
+    opt_address<=hk[16];
   end else begin
     hashkey = 512'd0;
   end

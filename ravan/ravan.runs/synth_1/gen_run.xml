@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1748924945" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ravan_axi_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1749885234" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ravan_axi_top.dcp">
   <File Type="PA-TCL" Name="ravan_axi_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="ravan_axi_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ravan_axi_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="ravan_axi_top.vds"/>
   <File Type="RDS-UTIL" Name="ravan_axi_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="ravan_axi_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="ravan_axi_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ravan_axi_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="ravan_axi_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/rtl/custom32.v">
@@ -102,6 +105,14 @@
     <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
         <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_2/design_2.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

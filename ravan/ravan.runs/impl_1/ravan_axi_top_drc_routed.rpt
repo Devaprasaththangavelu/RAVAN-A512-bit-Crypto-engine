@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Jun  3 11:06:07 2025
+| Date         : Sat Jun 14 12:50:28 2025
 | Host         : Rubashree running 64-bit major release  (build 9200)
 | Command      : report_drc -file ravan_axi_top_drc_routed.rpt -pb ravan_axi_top_drc_routed.pb -rpx ravan_axi_top_drc_routed.rpx
 | Design       : ravan_axi_top
@@ -24,28 +24,28 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 27
+             Violations found: 21
 +----------+------------------+-----------------------------------------------------+------------+
 | Rule     | Severity         | Description                                         | Violations |
 +----------+------------------+-----------------------------------------------------+------------+
 | NSTD-1   | Critical Warning | Unspecified I/O Standard                            | 1          |
 | UCIO-1   | Critical Warning | Unconstrained Logical Port                          | 1          |
 | CFGBVS-1 | Warning          | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PDRC-153 | Warning          | Gated clock check                                   | 24         |
+| PDRC-153 | Warning          | Gated clock check                                   | 18         |
 +----------+------------------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 NSTD-1#1 Critical Warning
 Unspecified I/O Standard  
-162 out of 162 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: addr_to_mem[15:0], arready, arvalid, awready, awvalid, bready, bvalid, clk,
+178 out of 178 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: addr_to_mem[31:0], arready, arvalid, awready, awvalid, bready, bvalid, clk,
 data[63:0], data_out[63:0], key[0], key[1], key[2], key[3], mem_sel
  (the first 15 of 21 listed).
 Related violations: <none>
 
 UCIO-1#1 Critical Warning
 Unconstrained Logical Port  
-162 out of 162 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: addr_to_mem[15:0], arready, arvalid, awready, awvalid, bready, bvalid, clk,
+178 out of 178 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: addr_to_mem[31:0], arready, arvalid, awready, awvalid, bready, bvalid, clk,
 data[63:0], data_out[63:0], key[0], key[1], key[2], key[3], mem_sel
  (the first 15 of 21 listed).
 Related violations: <none>
@@ -70,115 +70,85 @@ Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net core/pipeline_unit/dummy2_reg[31]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/dummy2_reg[31]_i_2/O, cell core/pipeline_unit/dummy2_reg[31]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/dummy2_reg[28]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/dummy2_reg[28]_i_2/O, cell core/pipeline_unit/dummy2_reg[28]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net core/pipeline_unit/hk is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[15][30]_i_1/O, cell core/pipeline_unit/hk_reg[15][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[15][28]_i_2/O, cell core/pipeline_unit/hk_reg[15][28]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[0][28]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[0][28]_i_1/O, cell core/pipeline_unit/hk_reg[0][28]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[10][2]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[10][2]_i_2/O, cell core/pipeline_unit/hk_reg[10][2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[10][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[10][30]_i_1/O, cell core/pipeline_unit/hk_reg[10][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[11][30]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[11][30]_i_2/O, cell core/pipeline_unit/hk_reg[11][30]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[11][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[11][30]_i_1/O, cell core/pipeline_unit/hk_reg[11][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[12][29]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[12][29]_i_2/O, cell core/pipeline_unit/hk_reg[12][29]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[12][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[12][30]_i_1/O, cell core/pipeline_unit/hk_reg[12][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[13][17]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[13][17]_i_2/O, cell core/pipeline_unit/hk_reg[13][17]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[13][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[13][30]_i_1/O, cell core/pipeline_unit/hk_reg[13][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[14][27]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[14][27]_i_2/O, cell core/pipeline_unit/hk_reg[14][27]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#9 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[14][30]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[14][30]_i_2/O, cell core/pipeline_unit/hk_reg[14][30]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[4][18]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[4][18]_i_1/O, cell core/pipeline_unit/hk_reg[4][18]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#10 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[1][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[1][30]_i_1/O, cell core/pipeline_unit/hk_reg[1][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[6][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[6][30]_i_1/O, cell core/pipeline_unit/hk_reg[6][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#11 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[2][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[2][30]_i_1/O, cell core/pipeline_unit/hk_reg[2][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[7][27]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[7][27]_i_1/O, cell core/pipeline_unit/hk_reg[7][27]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#12 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[3][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[3][30]_i_1/O, cell core/pipeline_unit/hk_reg[3][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/hk_reg[9][29]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[9][29]_i_1/O, cell core/pipeline_unit/hk_reg[9][29]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#13 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[4][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[4][30]_i_1/O, cell core/pipeline_unit/hk_reg[4][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/sel_reg[3]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/sel_reg[3]_i_2/O, cell core/pipeline_unit/sel_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#14 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[5][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[5][30]_i_1/O, cell core/pipeline_unit/hk_reg[5][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/state_reg[2]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/state_reg[2]_i_2/O, cell core/pipeline_unit/state_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#15 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[6][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[6][30]_i_1/O, cell core/pipeline_unit/hk_reg[6][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/wait_count__0 is a gated clock net sourced by a combinational pin core/pipeline_unit/wait_count_reg[1]_i_2/O, cell core/pipeline_unit/wait_count_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#16 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[7][29]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[7][29]_i_1/O, cell core/pipeline_unit/hk_reg[7][29]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net core/pipeline_unit/we_reg_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/we_reg_i_2/O, cell core/pipeline_unit/we_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#17 Warning
 Gated clock check  
-Net core/pipeline_unit/hk_reg[8][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[8][30]_i_1/O, cell core/pipeline_unit/hk_reg[8][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#18 Warning
-Gated clock check  
-Net core/pipeline_unit/hk_reg[9][30]_i_1_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/hk_reg[9][30]_i_1/O, cell core/pipeline_unit/hk_reg[9][30]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#19 Warning
-Gated clock check  
-Net core/pipeline_unit/sel_reg[3]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/sel_reg[3]_i_2/O, cell core/pipeline_unit/sel_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#20 Warning
-Gated clock check  
-Net core/pipeline_unit/state__0 is a gated clock net sourced by a combinational pin core/pipeline_unit/state_reg[2]_i_2/O, cell core/pipeline_unit/state_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#21 Warning
-Gated clock check  
-Net core/pipeline_unit/wait_count__0 is a gated clock net sourced by a combinational pin core/pipeline_unit/wait_count_reg[1]_i_2/O, cell core/pipeline_unit/wait_count_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#22 Warning
-Gated clock check  
-Net core/pipeline_unit/we_reg_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/we_reg_i_2/O, cell core/pipeline_unit/we_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#23 Warning
-Gated clock check  
 Net core/pipeline_unit/wr_data__0 is a gated clock net sourced by a combinational pin core/pipeline_unit/addr_reg[3]_i_1/O, cell core/pipeline_unit/addr_reg[3]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
-PDRC-153#24 Warning
+PDRC-153#18 Warning
 Gated clock check  
 Net core/pipeline_unit/wr_data_reg[2]_i_2_n_0 is a gated clock net sourced by a combinational pin core/pipeline_unit/wr_data_reg[2]_i_2/O, cell core/pipeline_unit/wr_data_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>

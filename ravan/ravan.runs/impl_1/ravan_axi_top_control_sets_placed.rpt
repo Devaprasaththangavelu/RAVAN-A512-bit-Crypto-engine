@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Jun  3 11:05:36 2025
+| Date         : Sat Jun 14 12:49:24 2025
 | Host         : Rubashree running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file ravan_axi_top_control_sets_placed.rpt
 | Design       : ravan_axi_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    32 |
-|    Minimum number of control sets                        |    32 |
+| Total control sets                                       |    27 |
+|    Minimum number of control sets                        |    27 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   144 |
+| Unused register locations in slices containing registers |   139 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    32 |
-| >= 0 to < 4        |     9 |
+| Total control sets |    27 |
+| >= 0 to < 4        |    19 |
 | >= 4 to < 6        |     2 |
-| >= 6 to < 8        |     4 |
-| >= 8 to < 10       |     6 |
-| >= 10 to < 12      |     5 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     6 |
+| >= 16              |     5 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             270 |          120 |
-| No           | No                    | Yes                    |              19 |            8 |
-| No           | Yes                   | No                     |             460 |          158 |
-| Yes          | No                    | No                     |             323 |          171 |
-| Yes          | No                    | Yes                    |               8 |            4 |
+| No           | No                    | No                     |              25 |           21 |
+| No           | No                    | Yes                    |              11 |            6 |
+| No           | Yes                   | No                     |             460 |          115 |
+| Yes          | No                    | No                     |             387 |          182 |
+| Yes          | No                    | Yes                    |               2 |            2 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,41 +70,36 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------------------------------+------------------------------------------+---------------------------------------+------------------+----------------+--------------+
-|                Clock Signal                |               Enable Signal              |            Set/Reset Signal           | Slice Load Count | Bel Load Count | Bels / Slice |
-+--------------------------------------------+------------------------------------------+---------------------------------------+------------------+----------------+--------------+
-|  core/pipeline_unit/cs_reg_i_2_n_0         |                                          | rst_IBUF                              |                1 |              1 |         1.00 |
-|  core/pipeline_unit/we_reg_i_2_n_0         |                                          | rst_IBUF                              |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG                             | bvalid_i_1_n_0                           | core/pipeline_unit/hash_unit/core/rst |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG                             | rvalid_i_1_n_0                           | core/pipeline_unit/hash_unit/core/rst |                1 |              1 |         1.00 |
-|  core/pipeline_unit/wait_count__0          |                                          | rst_IBUF                              |                1 |              2 |         2.00 |
-|  core/pipeline_unit/hk_reg[1][30]_i_1_n_0  |                                          |                                       |                1 |              3 |         3.00 |
-|  core/pipeline_unit/hk_reg[0][28]_i_1_n_0  |                                          |                                       |                1 |              3 |         3.00 |
-|  core/pipeline_unit/state__0               |                                          |                                       |                1 |              3 |         3.00 |
-|  core/pipeline_unit/wr_data_reg[2]_i_2_n_0 |                                          |                                       |                2 |              3 |         1.50 |
-|  core/pipeline_unit/sel_reg[3]_i_2_n_0     |                                          | rst_IBUF                              |                1 |              4 |         4.00 |
-|  core/pipeline_unit/wr_data__0             |                                          | rst_IBUF                              |                1 |              4 |         4.00 |
-|  core/pipeline_unit/hk_reg[8][30]_i_1_n_0  |                                          |                                       |                3 |              6 |         2.00 |
-|  core/pipeline_unit/hk_reg[7][29]_i_1_n_0  |                                          |                                       |                4 |              6 |         1.50 |
-|  clk_IBUF_BUFG                             | core/pipeline_unit/hash_unit/core/a_h_we | core/pipeline_unit/hash_unit/core/rst |                2 |              6 |         3.00 |
-|  core/pipeline_unit/hk_reg[5][30]_i_1_n_0  |                                          |                                       |                2 |              7 |         3.50 |
-|  core/pipeline_unit/hk_reg[2][30]_i_1_n_0  |                                          |                                       |                4 |              8 |         2.00 |
-|  core/pipeline_unit/hk_reg[4][30]_i_1_n_0  |                                          |                                       |                3 |              8 |         2.67 |
-|  core/pipeline_unit/hk                     |                                          |                                       |                5 |              9 |         1.80 |
-|  core/pipeline_unit/hk_reg[6][30]_i_1_n_0  |                                          |                                       |                6 |              9 |         1.50 |
-|  core/pipeline_unit/hk_reg[14][30]_i_2_n_0 |                                          |                                       |                5 |              9 |         1.80 |
-|  core/pipeline_unit/hk_reg[13][30]_i_1_n_0 |                                          |                                       |                3 |              9 |         3.00 |
-|  core/pipeline_unit/hk_reg[10][30]_i_1_n_0 |                                          |                                       |                4 |             10 |         2.50 |
-|  core/pipeline_unit/hk_reg[11][30]_i_1_n_0 |                                          |                                       |                4 |             10 |         2.50 |
-|  core/pipeline_unit/hk_reg[3][30]_i_1_n_0  |                                          |                                       |                4 |             10 |         2.50 |
-|  core/pipeline_unit/hk_reg[9][30]_i_1_n_0  |                                          |                                       |                6 |             10 |         1.67 |
-|  core/pipeline_unit/hk_reg[12][30]_i_1_n_0 |                                          |                                       |                5 |             10 |         2.00 |
-|  clk_IBUF_BUFG                             |                                          | core/pipeline_unit/hash_unit/core/rst |                8 |             19 |         2.38 |
-|  core/pipeline_unit/dummy2_reg[31]_i_2_n_0 |                                          |                                       |                9 |             26 |         2.89 |
-|  clk_IBUF_BUFG                             | data_out[63]_i_1__0_n_0                  |                                       |               42 |             64 |         1.52 |
-|  clk_IBUF_BUFG                             |                                          |                                       |               48 |            111 |         2.31 |
-|  clk_IBUF_BUFG                             | data_in[63]_i_1_n_0                      |                                       |              129 |            259 |         2.01 |
-|  clk_IBUF_BUFG                             |                                          | rst_IBUF                              |              153 |            448 |         2.93 |
-+--------------------------------------------+------------------------------------------+---------------------------------------+------------------+----------------+--------------+
++--------------------------------------------+---------------------------------------+------------------------+------------------+----------------+--------------+
+|                Clock Signal                |             Enable Signal             |    Set/Reset Signal    | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------------+---------------------------------------+------------------------+------------------+----------------+--------------+
+|  core/pipeline_unit/hk_reg[13][17]_i_2_n_0 |                                       |                        |                1 |              1 |         1.00 |
+|  core/pipeline_unit/cs_reg_i_2_n_0         |                                       | rst_IBUF               |                1 |              1 |         1.00 |
+|  core/pipeline_unit/hk_reg[10][2]_i_2_n_0  |                                       |                        |                1 |              1 |         1.00 |
+|  core/pipeline_unit/hk_reg[12][29]_i_2_n_0 |                                       |                        |                1 |              1 |         1.00 |
+|  core/pipeline_unit/dummy2_reg[28]_i_2_n_0 |                                       |                        |                1 |              1 |         1.00 |
+|  core/pipeline_unit/hk                     |                                       |                        |                1 |              1 |         1.00 |
+|  core/pipeline_unit/wr_data_reg[2]_i_2_n_0 |                                       |                        |                1 |              1 |         1.00 |
+|  core/pipeline_unit/we_reg_i_2_n_0         |                                       | rst_IBUF               |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                             | bvalid_i_1_n_0                        | core/pipeline_unit/rst |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                             | rvalid_i_1_n_0                        | core/pipeline_unit/rst |                1 |              1 |         1.00 |
+|  core/pipeline_unit/hk_reg[6][30]_i_1_n_0  |                                       |                        |                2 |              2 |         1.00 |
+|  core/pipeline_unit/hk_reg[14][27]_i_2_n_0 |                                       |                        |                1 |              2 |         2.00 |
+|  core/pipeline_unit/hk_reg[4][18]_i_1_n_0  |                                       |                        |                2 |              2 |         1.00 |
+|  core/pipeline_unit/hk_reg[7][27]_i_1_n_0  |                                       |                        |                2 |              2 |         1.00 |
+|  core/pipeline_unit/wait_count__0          |                                       | rst_IBUF               |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG                             |                                       |                        |                2 |              2 |         1.00 |
+|  core/pipeline_unit/hk_reg[9][29]_i_1_n_0  |                                       |                        |                2 |              3 |         1.50 |
+|  core/pipeline_unit/hk_reg[11][30]_i_2_n_0 |                                       |                        |                2 |              3 |         1.50 |
+|  core/pipeline_unit/state_reg[2]_i_2_n_0   |                                       |                        |                2 |              3 |         1.50 |
+|  core/pipeline_unit/wr_data__0             |                                       | rst_IBUF               |                2 |              4 |         2.00 |
+|  core/pipeline_unit/sel_reg[3]_i_2_n_0     |                                       | rst_IBUF               |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                             |                                       | core/pipeline_unit/rst |                6 |             11 |         1.83 |
+|  clk_IBUF_BUFG                             | core/memory_core/out_data[63]_i_1_n_0 |                        |               16 |             64 |         4.00 |
+|  clk_IBUF_BUFG                             | core/memory_core/p_0_in__0            |                        |               16 |             64 |         4.00 |
+|  clk_IBUF_BUFG                             | data_out[63]_i_1__0_n_0               |                        |               39 |             64 |         1.64 |
+|  clk_IBUF_BUFG                             | data_in[63]_i_1_n_0                   |                        |              127 |            259 |         2.04 |
+|  clk_IBUF_BUFG                             |                                       | rst_IBUF               |              108 |            448 |         4.15 |
++--------------------------------------------+---------------------------------------+------------------------+------------------+----------------+--------------+
 
 
